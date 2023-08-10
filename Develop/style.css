@@ -76,7 +76,7 @@ h2 {
   clear: both;
 }
 
-.btn {
+button {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
