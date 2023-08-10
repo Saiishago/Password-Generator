@@ -7,3 +7,5 @@ https://www.scaler.com/topics/password-generator-javascript/
 https://dev.to/code_mystery/random-password-generator-using-javascript-6a
 https://webdesign.tutsplus.com/build-a-configurable-random-password-generator-with-javascript--cms-93262t
 https://www.tutorialstonight.com/password-generator-in-javascript
+
+I read *modify* " *javascript* " *starter* *code* , forgetting the *index.html* and *style.css* files.

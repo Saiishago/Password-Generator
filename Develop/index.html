@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="wrapper">
     <div class="container">
       <div class="password-generator">
         <header>
@@ -52,9 +53,12 @@
             <label for="symbol">Symbol</label>
             <input type="checkbox" id="symbol" checked>
           </div>
-          <button onclick= "generate()">Generate Button</button>
+          <div class="card-footer">
+            <button onclick= "generate()" class="btn">Generate Button</button>
+          </div>
         </div>
       </div>
+    </div>
     </div>
     <script src="script.js"></script>
   </body>

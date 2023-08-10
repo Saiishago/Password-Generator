@@ -50,6 +50,10 @@ header {
   height: 2px;
 }
 
+h2 {
+  text-align: center;
+}
+
 .card-body {
   min-height: 100px;
 }
@@ -88,7 +92,7 @@ header {
   cursor: pointer;
 }
 
-button[disabled] {
+button[abled] {
   cursor: default;
   background: #c0c7cf;
 }
