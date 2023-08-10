@@ -9,23 +9,50 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+      <div class="password-generator">
+        <header>
+          <h1>Password Generator</h1>
+        </header>
+        <div class="card">
+          <div class="card-header">
+            <h2>Generate a Password</h2>
+          </div>
+          <div class="password">
+            <p id="textBlock"></p><i class="far fa-clipboard" onclick="copyPassword()"></i>
+          </div>
+          <div class="card-body">
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password"
+              aria-label="Generated Password"
+            ></textarea>
+          </div>
+          <div>
+            <label for="min-length">Min-Length</label>
+            <input type="number" id="min-length" min="6" value="6">
+          </div>
+          <div>
+            <label for="max-length">Max-Length</label>
+            <input type="number" id="max-length" max="12" value="12">
+          </div>
+          <div>
+            <label for="upperCase">Upper-Case</label>
+            <input type="checkbox" id="upperCase" checked>
+          </div>
+          <div>
+            <label for="lowerCase">Lower-Case</label>
+            <input type="checkbox" id="lowerCase" checked>
+          </div>
+          <div>
+            <label for="number">Number</label>
+            <input type="checkbox" id="number" checked>
+          </div>
+          <div>
+            <label for="symbol">Symbol</label>
+            <input type="checkbox" id="symbol" checked>
+          </div>
+          <button onclick= "generate()">Generate Button</button>
         </div>
       </div>
     </div>
