@@ -1,75 +1,65 @@
-var generateBtn = document.querySelector('#generate');
+var generateBtn = document.querySelector("#generate");
 
-const chars = (
-  symbol = "()*^&#%$@!?;:=+-_.,",
-  number = '1234567890',
-  lowerCase = 'abcdefghijklmnopqrstuvwxyz',
-  upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-);
+function generatePassword(length) {
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+";
+  let password = "";
+  
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset.charAt(randomIndex);
+  }
+  
+  return password;
+}
 
-const getChars = (
-  function symbol() {
-  return chars.symbol[Math.floor(Math.random() * chars.symbol.length)]
-  },
-  function number() {
-    return chars.number[Math.floor(Math.random() * chars.number.length)]
+
+const getKey = [
+  function upperCase() {
+    return keys.upperCase[Math.floor(Math.random() * keys.upperCase.length)];
   },
   function lowerCase() {
-    return chars.lowerCase[Math.floor(Math.random() * chars.lowerCase.length)]
+    return keys.lowerCase[Math.floor(Math.random() * keys.lowerCase.length)];
   },
-  function upperCase() {
-    return chars.upperCase[Math.floor(Math.random() * chars.upperCase.length)]
+  function number() {
+    return keys.number[Math.floor(Math.random() * keys.number.length)];
+  },
+  function symbol() {
+    return keys.symbol[Math.floor(Math.random() * keys.symbol.length)];
   }
-);
+];
 
-function generatePassword() {
-  const symbol = document.getElementById('symbol').checked;
-  const number = document.getElementById('number').checked;
-  const lower = document.getElementById('lower').checked;
-  const upper = document.getElementById('upper').checked;
-  if (symbol + number + lower + upper === 0) {
-    alert('Check at least two boxes');
+function createPassword() {
+  const upper = document.getElementById("upperCase").checked;
+  const lower = document.getElementById("lowerCase").checked;
+  const number = document.getElementById("number").checked;
+  const symbol = document.getElementById("symbol").checked;
+  if (upper + lower + number + symbol === 0) {
+    alert("Please check atleast one box!");
     return;
   }
-
- const textBlock = document.getElementById('textBlock');
- const length = document.getElementById('length');
- let password = '';
- while (length.value > password.length) {
-  let keyToAdd = getChars[Math.floor(Math.random() * getChars.length)];
-  let isChecked = document.getElementById(keyToAdd.name).checked;
-  if (isChecked) {
-    password += keyToAdd();
+  const passwordBox = document.getElementById("passwordBox");
+  const length = document.getElementById("length");
+  let password = "";
+  while (length.value > password.length) {
+    let keyToAdd = getKey[Math.floor(Math.random() * getKey.length)];
+    let isChecked = document.getElementById(keyToAdd.name).checked;
+    if (isChecked) {
+      password += keyToAdd();
+    }
   }
- }
- textBlock.innerHTML = password;
+  passwordBox.innerHTML = password;
 }
 function copyPassword() {
-  const textarea = document.createElement('textarea');
-  const password = document.getElementById('textBlock').innerText;
-  if (!password) {return;}
+  const textarea = document.createElement("textarea");
+  const password = document.getElementById("passwordBox").innerText;
+  if (!password) { return; }
   textarea.value = password;
   document.body.appendChild(textarea);
   textarea.select();
-  document.insertTexr('copy');
+  document.execCommand("copy");
   textarea.remove();
-  alert('Password has been copied');
+  alert("Password copied to clipboard");
 }
 
-var generateBtn = document.querySelector('#generate');
-
-function writePassword() {
-  const password = document.generatePassword()
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
-
-}
-
-
-generateBtn.addEventListener('click',function () {
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
-
-});
+const password = generatePassword(12);
+console.log(password);
