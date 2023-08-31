@@ -55,7 +55,8 @@ h2 {
 }
 
 .card-body {
-  min-height: 100px;
+  min-height: 10px;
+  min-width: 200px;
 }
 
 .card-footer {
@@ -101,7 +102,7 @@ button[abled] {
   float: right;
 }
 
-#password {
+#generatedPassword {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -129,7 +130,7 @@ button[abled] {
     padding: 10px 15px;
   }
 
-  #password {
+  #generatedPassword {
     font-size: 1rem;
   }
 }

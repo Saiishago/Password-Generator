@@ -2,10 +2,13 @@
 Generating a Password using JavaScript
 
 Screenshot of the Challenge:
-![Alt text](<Screen Shot 2023-08-10 at 5.56.46 PM.png>)
 
-![Alt text](<Screen Shot 2023-08-10 at 9.45.08 PM (2).png>)
+Before Password is Generated
+![Alt text](<without Generated Password.png>)
 
+
+After Password is Generated
+![Alt text](<with Generated Password.png>)
 
 Links to the Challenge:
 
